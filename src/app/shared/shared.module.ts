@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { CommonModule } from '@angular/common'
+import { NavbarComponent } from './components/navbar/navbar.component'
 import { FooterComponent } from './components/footer/footer.component'
+import { RelativePipe } from './pipes/relative.pipe'
 
 @NgModule({
-  declarations: [
-    NavbarComponent,
-    FooterComponent
-  ],
+  declarations: [NavbarComponent, FooterComponent, RelativePipe],
   imports: [CommonModule],
-  exports: [
-    NavbarComponent,
-    FooterComponent
-  ]
+  exports: [NavbarComponent, FooterComponent, RelativePipe],
 })
 export class SharedModule {}
