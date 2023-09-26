@@ -1,0 +1,33 @@
+<div class="vstack gap-4">
+  <h1>Plan de estudios</h1>
+  <hr>
+  <div class="row g-3">
+    <app-career-card *ngFor="let career of careers; index as i" class="col-md-6 col-lg-4" [title]="career.title" [curriculum]="career.curriculum" [color]="colors[i]"></app-career-card>
+  </div>
+  <img src="http://www.utez.edu.mx/images/2022/02/Portada-conocenos.png" class="img-fluid">
+  <h1>¿Quiénes somos?</h1>
+  <hr>
+  <p class="text-center">{{definition}}</p>
+  <h2 class="text-center" style="color: #3d6087;">Misión</h2>
+  <p class="text-center">{{mission}}</p>
+  <h2 class="text-center" style="color: #3d6087;">Visión</h2>
+  <p class="text-center">{{vision}}</p>
+  <h1 class="text-center">Oferta educativa</h1>
+  <img src="http://www.utez.edu.mx/images/2018/feb/oferta/MODELO_EDUCATIVO_2-01.png" alt="Oferta Educativa UTEZ" class="img-fluid"/>
+  <div ngbAccordion>
+    <div *ngFor="let degree of degrees" ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton>{{degree.title}}</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            <ul>
+              <li *ngFor="let career of degree.careers">{{career}}</li>
+            </ul>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
