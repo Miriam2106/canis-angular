@@ -8,10 +8,11 @@ import {
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
   declarations: [NavbarComponent, FooterComponent, RelativePipe],
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   exports: [NavbarComponent, FooterComponent, RelativePipe, FontAwesomeModule],
 })
 export class SharedModule {
