@@ -1,0 +1,9 @@
+<div class="vstack gap-3">
+  <h1>Oferta educativa</h1>
+  <hr />
+  <div class="row g-3">
+    <div *ngFor="let carrer of careers" class="col-12 col-sm-6 col-md-4">
+      <app-career-card [title]="carrer.title" [description]="carrer.description"></app-career-card>
+    </div>
+  </div>
+</div>
