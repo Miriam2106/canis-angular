@@ -1,0 +1,30 @@
+<button (click)="collapse.toggle()" class="btn mb-3" [ngClass]="'btn-outline-' + (color ?? 'primary')">
+  <fa-icon icon="school" class="me-2"></fa-icon>
+  {{title}}
+</button>
+<hr *ngIf="isHidden" class="border" [ngClass]="color ? 'opacity-100 border-' + color : 'border-dark'">
+<div 
+  class="card"
+  [ngClass]="color ? 'border-' + color : ''"
+  #collapse="ngbCollapse"
+  [(ngbCollapse)]="isCollapsed"
+  (hidden)="setHidden()"
+  (ngbCollapseChange)="onToggle($event)"
+>
+  <div class="card-header bg-white d-flex align-items-center justify-content-between" [ngClass]="color ? 'border-' + color : ''">
+    <fa-icon icon="school"></fa-icon>
+    {{title}}
+    <button (click)="isCollapsed = true" type="button" class="btn-close" aria-label="Close"></button>
+  </div>
+  <div class="card-body">
+    <div class="row g-3">
+      <app-quarter-card 
+        *ngFor="let quarter of curriculum"
+        [quarterNumber]="quarter.quarterNumber"
+        [isInternships]="quarter.isInternships"
+        [subjects]="quarter.subjects"
+        [color]="color"
+      ></app-quarter-card>
+    </div>
+  </div>
+</div>
