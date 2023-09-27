@@ -7,6 +7,8 @@ import { News } from '../../models/news.model';
 })
 export class NewsCardComponent implements News {
   @Input()
+  image!:string;
+  @Input()
   tittle!: string;
   @Input()
   description!: string;

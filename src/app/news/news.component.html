@@ -9,6 +9,7 @@
   <app-news-card
     *ngFor="let new of news"
     class="col-md-6 col-lg-4"
+    [image]="new.image"
     [tittle]="new.tittle"
     [description]="new.description"
   ></app-news-card>
