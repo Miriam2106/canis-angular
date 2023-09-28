@@ -1,0 +1,11 @@
+<div class="card" [ngClass]="color ? 'text-bg-' + color : ''">
+  <div class="card-header">
+    Cuatrimestre {{quarterNumber}}
+  </div>
+  <div class="card-body">
+    <h6 class="card-title">{{isInternships ? 'Periodo de estadías' : 'Materias a cursar'}}</h6>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let subject of subjects" class="list-group-item"><small>{{subject}}</small></li>
+    </ul>
+  </div>
+</div>

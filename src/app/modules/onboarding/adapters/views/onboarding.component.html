@@ -1,0 +1,22 @@
+<div class="vstack gap-3">
+  <h1>Onboarding</h1>
+  <hr>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <nav class="navbar shadow-sm navbar-expand bg-light">
+        <div class="container-fluid">
+          <div class="navbar-collapse">
+            <div class="navbar-nav row g-0">
+              <div class="col-auto d-flex"><span class="navbar-brand">Tu Sitio</span></div>
+              <div *ngFor="let section of sections" class="col-auto">
+                <li class="nav-item">
+                  <span [ngbTooltip]="section.description" #tooltip="ngbTooltip" [autoClose]="false" placement="bottom-left" triggers="manual" class="nav-link">{{section.title}}</span>
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
